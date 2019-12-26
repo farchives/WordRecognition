@@ -1,10 +1,3 @@
-# encoding=utf8
-# -*- coding: utf-8 -*-
-"""
-2 layers Neural network applied to handwriting recognition
-from MNIST database.
-"""
-
 from __future__ import division
 import time
 import pickle
@@ -13,11 +6,6 @@ from random import randint
 from scipy import misc
 from scipy import special
 import numpy as np
-
-
-# =====================
-#    Initialisation
-# =====================
 
 # Initialisation - Import from MNIST database
 START_TIME = time.time()
@@ -30,11 +18,6 @@ ft.close()
 
 print('Import duration '+str(round((time.time() - START_TIME), 2))+'s')
 print('----')
-
-# =====================
-#     Network class
-# =====================
-
 
 class Network:
 
@@ -153,10 +136,6 @@ class Network:
 nt1=Network(300)
 nt1.train(600,TRAINING)
 
-# =====================
-#   Display fonctions
-# =====================
-
 # Rounding off the prints and scientific notation
 np.set_printoptions(precision=2)
 np.set_printoptions(suppress=True)
@@ -200,9 +179,6 @@ def test_nn(network):
             ok += 1
     return round((ok*100./nb), 1)
 
-# =====================
-#     Try with png
-# =====================
 
 def load_png(png):
     img = misc.imread(png)
